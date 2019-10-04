@@ -55,3 +55,12 @@ let gameBoard = [
       }
     }
   }
+
+  gameBoardContainer.addEventListener("click", fire, false);
+
+  function fire(e) {
+    if (e.target !== e.currentTarget) {
+      let row = e.target.id.substring(1, 2);
+      let col = e.target.id.substring(2, 3);
+    }
+  }
