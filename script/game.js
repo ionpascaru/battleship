@@ -2,6 +2,7 @@
 let rows = 10;
 let cols = 10;
 let squareSize = 50;
+let hitCount = 1;
 let hitCountBattleship = 0;
 
 //container element
@@ -159,5 +160,7 @@ show();
         }
       }
     }
+    let shots = document.getElementById("shots");
+    shots.innerHTML = hitCount++ +  " shots";
   }
   
