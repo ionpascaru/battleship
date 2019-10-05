@@ -40,9 +40,9 @@ let gameBoard = [
   function generateBattleships(){
     return gameBoard;
   }
-  
-  show();
-  
+   
+//show();
+
   function show(e) {
     for (i = 0; i < cols; i++) {
       for (j = 0; j < rows; j++) {
@@ -68,6 +68,7 @@ let gameBoard = [
         // change square value to 3 when missing
         gameBoard[row][col] = 3;
       } else if (gameBoard[row][col] === 1) {
+        e.target.style.background = 'red'; // change color to red when hit
         // change square value to 2 when hitting
         gameBoard[row][col] = 2;
         hitCountBattleship++; // increment hitCount
