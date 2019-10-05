@@ -2,6 +2,7 @@
 let rows = 10;
 let cols = 10;
 let squareSize = 50;
+let hitCountBattleship = 0;
 
 //container element
 let gameBoardContainer = document.getElementById("gameboard");
@@ -62,5 +63,19 @@ let gameBoard = [
     if (e.target !== e.currentTarget) {
       let row = e.target.id.substring(1, 2);
       let col = e.target.id.substring(2, 3);
+      if (gameBoard[row][col] === 0) {
+        e.target.style.background = "#bbb";
+        // change square value to 3 when missing
+        gameBoard[row][col] = 3;
+      } else if (gameBoard[row][col] === 1) {
+        // change square value to 2 when hitting
+        gameBoard[row][col] = 2;
+        hitCountBattleship++; // increment hitCount
+        // if all squares with ships are hit, end game
+        if (hitCountBattleship === 8) {
+          alert("Congrats! You won!");
+        }
+      }
     }
   }
+  
