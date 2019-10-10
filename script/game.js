@@ -1,14 +1,19 @@
 // grid rows + columns + size of square
 
-createGrid = function () {
-let rows = 10;
-let cols = 10;
-let squareSize = 50;
-let hitCount = 1;
-let hitCountBattleship = 0;
+/* function createGrid (rows, cols, squareSize, hitCount, hitCountBattleship) {
+this.rows = 10;
+this.cols = 10;
+this.squareSize = 50;
+this.hitCount = 1;
+this.hitCountBattleship = 0;
+}
+
+createGrid(); */
 
 //container element
-let gameBoardContainer = document.getElementById("gameboard");
+/* let gameBoardContainer = document.getElementById("gameboard");
+
+
 
 for (i = 0; i < cols; i++) {
   for (j = 0; j < rows; j++) {
@@ -23,6 +28,22 @@ for (i = 0; i < cols; i++) {
     square.style.left = leftPosition + "px";
   }
 }
+
+let gameBoardContainer1 = document.getElementById("gameboard1");
+for (i = 0; i < cols; i++) {
+  for (j = 0; j < rows; j++) {
+    let square = document.createElement("div");
+    gameBoardContainer1.appendChild(square); //adding square divs 
+    square.id = "s" + j + i; //add id to square
+    //grid coordinates
+    let topPosition = j * squareSize;
+    let leftPosition = i * squareSize;
+    //display positions
+    square.style.top = topPosition + "px"; 
+    square.style.left = leftPosition + "px";
+  }
+}
+
 
 //array with status of square:
 //0 = emty, 1 = ship part, 2 = sunken ship part, 3 = missed shot
@@ -127,12 +148,14 @@ let gameBoard = [
           gameBoard[secondDestroyerRow + j][secondDestroyerCol] = 1;
         }
       }
-    }
+    } */
   
+
+
    
 //show();
 
-  function show(e) {
+/*   function show(e) {
     for (i = 0; i < cols; i++) {
       for (j = 0; j < rows; j++) {
         //find ship and make it red
@@ -144,11 +167,21 @@ let gameBoard = [
         }
       }
     }
+  } */
+
+  class Game {
+    constructor() {
+      this.board = new Board("gameboard")
+      this.board2 = new Board ("gameboard1")
+      this.boat = new Boat()
+    }
   }
 
-  gameBoardContainer.addEventListener("click", fire, false);
+  
+  new Game()
 
-  function fire(e) {
+ /*  function fire(e) {
+    gameBoardContainer.addEventListener("click", fire, false);
     if (e.target !== e.currentTarget) {
       let row = e.target.id.substring(1, 2);
       let col = e.target.id.substring(2, 3);
@@ -167,6 +200,4 @@ let gameBoard = [
     }
     let shots = document.getElementById("shots");
     shots.innerHTML = hitCount++ +  " shots";
-  }
-}
-createGrid();
+  } */
