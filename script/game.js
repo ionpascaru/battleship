@@ -1,4 +1,6 @@
 // grid rows + columns + size of square
+
+createGrid = function () {
 let rows = 10;
 let cols = 10;
 let squareSize = 50;
@@ -38,12 +40,15 @@ let gameBoard = [
   [0,0,0,0,0,0,0,0,0,0]
   ];
 
+
+
+
   generateBattleships();
   // coordinates and directions of ships
   function generateBattleships(){
-    let battleshipRow = battleshipCol = Math.floor(Math.random() * 5) +0;
-    let destroyerRow = destroyerCol = Math.floor(Math.random() * 6) + 0;
-    let secondDestroyerRow = secondDestroyerCol = Math.floor(Math.random() * 6) +0;
+    let battleshipRow = battleshipCol = Math.floor(Math.random() * 6);
+    let destroyerRow = destroyerCol = Math.floor(Math.random() * 7);
+    let secondDestroyerRow = secondDestroyerCol = Math.floor(Math.random() * 7);
     let direction = Math.random();
     let direction2 = Math.random();
     let direction3 = Math.random();
@@ -62,8 +67,8 @@ let gameBoard = [
     if (direction2 < 0.5) {
       for (let i = 0; i < 4; i++) {
         if (gameBoard[destroyerRow][destroyerCol + i] === 1) {
-          destroyerRow = Math.floor(Math.random() * 6) +0;
-          destroyerCol = Math.floor(Math.random() * 6) +0;
+          destroyerRow = Math.floor(Math.random() * 7);
+          destroyerCol = Math.floor(Math.random() * 7);
           if (i === 0) {
             i = -1;
           } else {
@@ -77,8 +82,8 @@ let gameBoard = [
      } else {
         for (let i = 0; i < 4; i++) {
           if (gameBoard[destroyerRow +i][destroyerCol] === 1) {
-            destroyerRow = Math.floor(Math.random() * 6) +0;
-            destroyerCol = Math.floor(Math.random() * 6) +0;
+            destroyerRow = Math.floor(Math.random() * 7);
+            destroyerCol = Math.floor(Math.random() * 7);
             if (i === 0) {
               i = -1;
             } else {
@@ -94,8 +99,8 @@ let gameBoard = [
       if (direction3 < 0.5) {
         for (let i = 0; i < 4; i++) {
           if (gameBoard[secondDestroyerRow][secondDestroyerCol +i] === 1) {
-            secondDestroyerRow = Math.floor(Math.random() * 6) +0;
-            secondDestroyerCol = Math.floor(Math.random() * 6) +0;
+            secondDestroyerRow = Math.floor(Math.random() * 7);
+            secondDestroyerCol = Math.floor(Math.random() * 7);
             if (i === 0) {
               i = -1;
             } else {
@@ -109,8 +114,8 @@ let gameBoard = [
       } else {
         for (let i = 0; i < 4; i++) {
           if (gameBoard[secondDestroyerRow +i][secondDestroyerCol] === 1) {
-            secondDestroyerRow = Math.floor(Math.random() * 6) +0;
-            secondDestroyerCol = Math.floor(Math.random() * 6) +0;
+            secondDestroyerRow = Math.floor(Math.random() * 7);
+            secondDestroyerCol = Math.floor(Math.random() * 7);
             if (i === 0) {
               i = -1;
             } else {
@@ -125,7 +130,7 @@ let gameBoard = [
     }
   
    
-show();
+//show();
 
   function show(e) {
     for (i = 0; i < cols; i++) {
@@ -155,7 +160,7 @@ show();
         gameBoard[row][col] = 2; // change square value to 2 when hitting
         hitCountBattleship++; // increment hitCount
         // if all squares with ships are hit, end game
-        if (hitCountBattleship === 8) {
+        if (hitCountBattleship === 13) {
           alert("Congrats! You won!");
         }
       }
@@ -163,4 +168,5 @@ show();
     let shots = document.getElementById("shots");
     shots.innerHTML = hitCount++ +  " shots";
   }
-  
+}
+createGrid();
