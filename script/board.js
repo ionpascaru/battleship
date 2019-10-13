@@ -170,10 +170,10 @@ class Board {
       e.currentTarget.style.background = "red"; // change color to red when hit
       this.gameBoard[row][col] = 2; // change square value to 2 when hitting
       this.hitCountBattleship++; // increment hitCount
-      /*  // if all squares with ships are hit, end game
+      // if all squares with ships are hit, end game
       if (this.hitCountBattleship === 13) {
-        alert("Congrats! You won!");
-      } */
+        alert("Congrats! You won!")  ? "" : location.reload();
+      } 
     }
      let shots = document.getElementById("shots");
     shots.innerHTML = this.hitCount++ + " shots"; 
