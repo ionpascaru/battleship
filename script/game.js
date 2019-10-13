@@ -169,16 +169,7 @@ let gameBoard = [
     }
   } */
 
-  class Game {
-    constructor() {
-      this.board = new Board("gameboard")
-      this.board2 = new Board ("gameboard1")
-      this.boat = new Boat()
-    }
-  }
 
-  
-  new Game()
 
  /*  function fire(e) {
     gameBoardContainer.addEventListener("click", fire, false);
@@ -201,3 +192,26 @@ let gameBoard = [
     let shots = document.getElementById("shots");
     shots.innerHTML = hitCount++ +  " shots";
   } */
+
+
+  class GameMulty {
+    constructor() {
+      this.board = new Board("gameboard")
+      this.board2 = new Board ("gameboard1")
+    }
+  }
+
+  class GameSingle {
+    constructor() {
+      this.board = new Board("gameboard")
+    }
+  }
+  
+
+  function singlePlayer() {
+    onclick = new GameSingle();
+  }
+
+  function multiPlayer() {
+    onclick = new GameMulty();
+  }

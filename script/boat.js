@@ -1,4 +1,7 @@
-class Boat {
+
+
+
+/* class Boat {
   constructor() {
     this.cols = 10;
     this.rows = 10;
@@ -130,7 +133,7 @@ class Boat {
   }
 
   _setListeners() {
-    let squares = document.querySelectorAll(``);
+    let squares = document.getElementsByClassName("square");
     for (let i = 0; i < squares.length; i++) {
       squares[i].onclick = e => this._fire(e);
     }
@@ -158,4 +161,4 @@ class Boat {
   }
 
   _explosion() {}
-}
+} */

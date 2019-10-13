@@ -9,17 +9,20 @@
 </head>
 <body>
   <h1>BATTLESHIP</h1>
+  <button id="single" onclick="singlePlayer()">Single Player</button>
+  <button id="multy" onclick="multiPlayer()">1 vs 1</button>
   <p>Click the board to fire!</p>
   <br>
   <div id="gameboard">
+  </div>
+  
+  <div id="gameboard1">
   </div>
   <div class="stats">
     <span id="shots">
       ... shots
     </span>
-  </div>
-  <div id="gameboard1">
-  </div>
+  </div> 
   <script type="text/javascript" src="./script/boat.js"></script>
   <script type="text/javascript" src="./script/board.js"></script>
   <script type="text/javascript" src="./script/game.js"></script>
