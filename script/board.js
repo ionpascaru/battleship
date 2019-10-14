@@ -8,7 +8,7 @@ class Board {
     this.hitCountBattleship = 0;
     this.j = 0;
     this.i = 0;
-    this.gameBoard = [];
+    this.gameBoard = []
     this.hitCount = 1;
     this.direction = 0;
     this.direction2 = 0;
@@ -38,7 +38,8 @@ class Board {
   }
 
   _generate() {
-    this.gameBoard = [
+    this.gameBoard
+     this.gameBoard  =  [
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -49,7 +50,7 @@ class Board {
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ];
+    ];   
 
     // coordinates and directions of ships
 
@@ -172,12 +173,13 @@ class Board {
       this.hitCountBattleship++; // increment hitCount
       // if all squares with ships are hit, end game
       if (this.hitCountBattleship === 13) {
-        alert("Congrats! You won!")  ? "" : location.reload();
+        alert("Congrats! You won in only " + this.hitCount + " shots!")  ? "" : location.reload();
       } 
     }
      let shots = document.getElementById("shots");
     shots.innerHTML = this.hitCount++ + " shots"; 
   }
+  
   
 
   _explosion() {}
